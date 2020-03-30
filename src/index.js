@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {Provider} from 'mobx-react';
 import * as serviceWorker from './serviceWorker';
+import posstore from './stores/posstore';
+
+const pos = new posstore(); // 스토어 인스턴스를 만들고
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider pos={pos}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 

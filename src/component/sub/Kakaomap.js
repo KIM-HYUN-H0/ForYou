@@ -9,6 +9,7 @@ class Kakaomap extends Component {
   componentDidUpdate() {
     let a = this.props.mylat;
     let b = this.props.mylng;
+    let c = this.props.maskpos;
     let mapContainer = document.getElementById("map"), // 지도를 표시할 div
       mapOption = {
         center: new kakao.maps.LatLng(a,b), // 지도의 중심좌표
@@ -16,6 +17,15 @@ class Kakaomap extends Component {
       };
 
     let map = new kakao.maps.Map(mapContainer, mapOption);
+    if(c) {
+      for (let i in c) {
+        let markerPosition = new kakao.maps.LatLng(c[i].lat, c[i].lng);
+        let marker = new kakao.maps.Marker({
+          position : markerPosition
+        });
+        marker.setMap(map);
+      }
+    }
   }
 
   render() {

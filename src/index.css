@@ -1,3 +1,8 @@
+html {
+  height:100%;
+  width:100%;
+  position: absolute;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height:100%;
+  width:100%;
+  position: absolute;
 }
 
 code {
@@ -12,7 +20,34 @@ code {
     monospace;
 }
 
+#mainnav {
+  
+}
 #map {
   width:100%;
   height:350px;
+}
+
+#papago {
+  width:100%;
+  height:15em;
+  margin-top:5%;
+}
+#transinput {
+  height:15em;
+}
+
+#google {
+  margin-top:1em;
+}
+#transsubmit {
+  float:right;
+  display:inline;
+}
+#transdiv {
+  border:1px solid;
+}
+
+#secondselect {
+  margin-bottom:0px;
 }

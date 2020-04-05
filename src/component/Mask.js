@@ -5,14 +5,16 @@ import Maskcall from './sub/Maskcall';
 
 @inject("pos")
 @observer
+
 class Mask extends Component {
   render() {
     const { pos } = this.props;
     pos.getPosition2();
+    pos.getMask();
     return (
         <>        
-          <Kakaomap mylat={pos.mylat} mylng={pos.mylng}/>
-          <Maskcall mylat={pos.mylat} mylng={pos.mylng}/>
+          <Kakaomap mylat={pos.mylat} mylng={pos.mylng} maskpos={pos.maskpos}/>
+          <Maskcall maskpos = {pos.maskpos} />
         </>
     );
   }
